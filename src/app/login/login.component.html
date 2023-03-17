@@ -1,0 +1,26 @@
+<p>
+    <mat-toolbar >
+        <img src="../assets/images/tonic-teaching-logo.png" style="height: 50px;">
+        <span>Tonic Teaching</span>
+    </mat-toolbar>
+</p>
+<mat-card class="register-card">
+    <h2>Login</h2>
+    <div class="">
+        <mat-form-field class="form-field">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" value="" [(ngModel)]="email">
+        </mat-form-field>
+        <br>
+        <mat-form-field class="form-field">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Password" value="" type="password" [(ngModel)]="password">
+        </mat-form-field>
+        <button mat-raised-button (click)="navigate('create-account')">
+            Register
+        </button>
+        <button mat-raised-button color="primary" class="login-button" (click)="Login()">
+            Login
+        </button>
+    </div>
+</mat-card>
