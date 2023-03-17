@@ -48,6 +48,15 @@ export class UserService {
           );
     }
 
+    isAdmin() {
+      const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('X-Auth-Token',this.localStorageService.getToken());
+      let httpOptions={headers: headers};
+      return this.httpClient.get<any>(environement.apiUrl+"/api/is-admin", httpOptions)
+          .pipe(
+              catchError(this.handleError) 
+          );
+    }
+
     isfirstConnectionConfigurationDone() {
       const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('X-Auth-Token',this.localStorageService.getToken());
       let httpOptions={headers: headers};

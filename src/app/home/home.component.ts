@@ -16,9 +16,9 @@ export class HomeComponent {
         }
     });
 
-    userService.isfirstConnectionConfigurationDone().subscribe(response => {
-      if(response.isFirstConfigurationDone !== true) {
-        this.router.navigate(['first-connection']);
+    userService.isAdmin().subscribe(response => {
+      if(response.isAdmin !== true) {
+        this.router.navigate(['access-denied']);
       }
     });
   }
