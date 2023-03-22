@@ -1,0 +1,32 @@
+<H2>
+    Users
+</H2>
+<table mat-table [dataSource]="users">
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> email </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+    <ng-container matColumnDef="school">
+        <th mat-header-cell *matHeaderCellDef> school </th>
+        <td mat-cell *matCellDef="let element"> {{element.school}} </td>
+    </ng-container>
+    <ng-container matColumnDef="courseSubject">
+        <th mat-header-cell *matHeaderCellDef> Course Subject </th>
+        <td mat-cell *matCellDef="let element"> {{element.courseSubject}} </td>
+    </ng-container>
+    <ng-container matColumnDef="teacher">
+        <th mat-header-cell *matHeaderCellDef> Teacher </th>
+        <td mat-cell *matCellDef="let element"> {{element.teacher}} </td>
+    </ng-container>
+    <ng-container matColumnDef="authorizationForEmails">
+        <th mat-header-cell *matHeaderCellDef> Authorization For Emails </th>
+        <td mat-cell *matCellDef="let element"> {{element.recevedComercialEmails}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+  

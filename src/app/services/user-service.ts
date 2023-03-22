@@ -66,6 +66,15 @@ export class UserService {
           );
     }
 
+    getAll() {
+      const headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded').set('X-Auth-Token',this.localStorageService.getToken());
+      let httpOptions={headers: headers};
+      return this.httpClient.get<any>(environement.apiUrl+"/api/admin/users/get-all", httpOptions)
+          .pipe(
+              catchError(this.handleError) 
+          );
+    }
+
     private handleError(error: HttpErrorResponse) {
         if (error.status === 0) {
           // A client-side or network error occurred. Handle it accordingly.
